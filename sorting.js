@@ -2,14 +2,22 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
 
 // Given 1000 digits of PI as strings, return an array of the digits as numbers
 const stringsToNumbs = (numbers) => {
-    let digits = strNums.map(Number)
-    console.log(digits);
+    return numbers.map(Number);
 }
+console.log(stringsToNumbs(strNums));
 
 // With the same numbers, find the sum of the even values
-const sumEvens;
+const sumEvens = [];
 
+for (let i = 0; i < strNums.length; i++) {
+    if (strNums[i] % 2 === 0) {
+        sumEvens.push(strNums[i]);
+    }
+}
 console.log(sumEvens);
+
+const evenTotal = (acc, cur) => acc + cur;
+console.log(sumEvens.reduce(evenTotal));
 
 // Find the index of the first value when added to it's index = 512 (#ATX!!)
 const atxIdx;
